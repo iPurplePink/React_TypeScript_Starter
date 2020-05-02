@@ -1,4 +1,6 @@
-# Initially a stateless starter react app stucture
+# ReactTS Starter Kit
+
+This repository is ready for implemeting any local state management structure like: react hooks reducer, redux, apollo, relay and etc.
 
 ### Package versions:
 
