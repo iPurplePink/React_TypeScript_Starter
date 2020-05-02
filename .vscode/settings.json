@@ -1,8 +1,12 @@
 {
   "editor.rulers": [80],
   "editor.tabSize": 2,
+  "prettier.printWidth": 80,
+  "prettier.tabWidth": 2,
+  "prettier.semi": true,
   "prettier.singleQuote": true,
   "prettier.jsxSingleQuote": false,
+  "prettier.trailingComma": "all",
   "explorer.confirmDelete": false,
   "editor.formatOnSave": true,
   "editor.multiCursorModifier": "ctrlCmd",
