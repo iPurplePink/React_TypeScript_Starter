@@ -1,10 +1,10 @@
 import { lazy } from 'react';
-const App = lazy(() => import('../../modules/App'));
+const Profile = lazy(() => import('../../modules/Profile'));
 
 export default [
   {
-    component: App,
-    path: '/',
-    exact: true
-  }
+    component: Profile,
+    path: '/profile',
+    exact: true,
+  },
 ];
