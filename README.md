@@ -6,7 +6,7 @@ Initially a stateless starter react app stucture
 
 ### `react: ^16.13.1`
 
-### `typescript: ~3.7.2`
+### `typescript": ~3.8.3`
 
 ### `react-router-dom: ^5.1.2`
 
