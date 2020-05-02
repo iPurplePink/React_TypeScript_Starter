@@ -1,6 +1,4 @@
-# React TypeScript Starter
-
-## Initially a stateless starter react app stucture
+# Initially a stateless starter react app stucture
 
 ### Package versions:
 
