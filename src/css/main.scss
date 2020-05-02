@@ -1,3 +1,10 @@
+@import './variables/colors';
+
 @import './global';
 
-@import './modules/App/styles';
+@import './components/Header/styles';
+@import './components/Content/styles';
+@import './components/Footer/styles';
+
+@import './modules/Home/styles';
+@import './modules/Profile/styles';
