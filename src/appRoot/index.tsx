@@ -13,22 +13,27 @@ import publicRedirects from './redirects/public';
 import privateRedirects from './redirects/private';
 import Loading from '../components/Loading';
 import Layout from '../components/Layout';
+import useCookies from '../common/customHooks/useCookies';
 
 const AppRoot = () => {
-  const routes: RouteProps[] = [...publicRoutes, ...privateRoutes];
-  const redirects: RedirectProps[] = [...publicRedirects, ...privateRedirects];
+  const { isAuthenticated } = useCookies();
+
+  const routes: RouteProps[] = isAuthenticated ? privateRoutes : publicRoutes;
+  const redirects: RedirectProps[] = isAuthenticated
+    ? privateRedirects
+    : publicRedirects;
 
   return (
-    <Layout>
-      <BrowserRouter>
-        {redirects.map((redirect: RedirectProps, index: number) => (
-          <Redirect
-            from={redirect.from}
-            to={redirect.to}
-            exact={redirect.exact}
-            key={String(index)}
-          />
-        ))}
+    <BrowserRouter>
+      {redirects.map((redirect: RedirectProps, index: number) => (
+        <Redirect
+          from={redirect.from}
+          to={redirect.to}
+          exact={redirect.exact}
+          key={String(index)}
+        />
+      ))}
+      <Layout>
         <Suspense fallback={<Loading />}>
           <Switch>
             {routes.map((route: RouteProps, index: number) => (
@@ -40,8 +45,8 @@ const AppRoot = () => {
             ))}
           </Switch>
         </Suspense>
-      </BrowserRouter>
-    </Layout>
+      </Layout>
+    </BrowserRouter>
   );
 };
 
